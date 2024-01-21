@@ -1,0 +1,14 @@
+<div class="text-center">
+  <h2>{{title}}</h2>
+  <p>{{content}}</p>
+  <p>Created by {{user.name}} on {{format_date createdAt}}</p>
+</div>
+<section>
+  {{#each Comments as |comment|}}
+  <div>
+    <p>
+      {{comment.content}}
+    </p>
+  </div>
+  {{/each}}
+</section>

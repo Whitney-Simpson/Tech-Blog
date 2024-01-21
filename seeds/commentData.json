@@ -1,0 +1,18 @@
+[
+    {
+      "content": "Hello, how are you?",
+      "postId": 1, 
+      "userId": 1
+    },
+    {
+      "content": "Awesome!",
+      "postId": 1, 
+      "userId": 2
+    },
+    {
+      "content": "Great idea!",
+      "postId": 1, 
+      "userId": 3
+    }
+  ]
+  
