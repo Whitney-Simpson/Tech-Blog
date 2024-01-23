@@ -17,7 +17,10 @@ router.post('/', (req, res)=>{
         res.json(postData)
     })
 })
-
+router.delete('/:id', (req, res) => {
+    Post.destroy({where: {id: req.params.id}}).then(response => {
+        res.json(response)
+    })})
 
 
 
