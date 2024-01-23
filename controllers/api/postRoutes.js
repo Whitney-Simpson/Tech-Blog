@@ -7,7 +7,16 @@ router.get('/', (req, res) => {
     Post.findAll({include: [User, Comment]}).then(data => {res.json(data)})
 })
 
-
+router.post('/', (req, res)=>{
+    const postObject = {
+        title: req.body.title,
+        content: req.body.content,
+        userId: req.session.userId
+    }
+    Post.create(postObject).then(postData => {
+        res.json(postData)
+    })
+})
 
 
 
