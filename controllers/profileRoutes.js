@@ -14,5 +14,10 @@ router.get("/", withAuth, async (req, res) => {
   const posts = postData.map((post) => post.get({ plain: true }));
   res.render("profile", { posts, loggedIn: req.session.loggedIn, name: req.session.name });
 });
+router.get('/posts/edit/:id', withAuth, async (req, res) =>{
+  const postData = await Post.findOne({where: {id: req.params.id}})
+const post = postData.get({plain: true})
+res.render('editPost',{...post})
+})
 
 module.exports = router;

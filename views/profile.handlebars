@@ -31,10 +31,11 @@
     <div class="row mb-2">
       <div class="col-md-8">
         <h4><a href="/posts/{{post.id}}">{{post.title}}</a></h4>
+         <p>Created by {{post.user.name}} on {{format_date post.createdAt}}</p>
       </div>
       <div class="col-md-4">
         <button class="btn btn-sm btn-danger" id= 'deleteBtn' data-id="{{post.id}}">DELETE</button>
-        <button class="btn btn-sm btn-danger" data-id="{{post.id}}">Edit</button>
+        <a href="/profile/posts/edit/{{post.id}}"><button class="btn btn-sm btn-danger" data-id="{{post.id}}">Edit</button></a>
       </div>
     </div>
     {{/each}}
@@ -44,5 +45,5 @@
 
 <script src="./js/profile.js"></script> 
 {{#if posts.length}}
-<script src="./js/edit.js"></script>
+<script src="./js/delete.js"></script>
 {{/if}}

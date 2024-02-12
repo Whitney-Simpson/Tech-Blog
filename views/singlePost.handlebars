@@ -3,6 +3,7 @@
   <p>{{content}}</p>
   <p>Created by {{user.name}} on {{format_date createdAt}}</p>
 </div>
+{{#if loggedIn}}
 <form class="form new-comment-form" data-id = '{{id}}'>
   <div class="form-group">
     <label for="content">comment:</label>
@@ -12,13 +13,16 @@
     <button type="submit" class="btn btn-primary" data-id="{{id}}">Submit</button>
   </div>
 </form>
+{{/if}}
 <section>
   {{#each Comments as |comment|}}
     <div>
       <p>
         {{comment.content}}
       </p>
-    </div>
+      
+       <p>Created on {{format_date comment.createdAt}} 
+
   {{/each}}
 </section>
 <script src="../js/comment.js"></script>
