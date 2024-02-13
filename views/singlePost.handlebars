@@ -20,9 +20,7 @@
       <p>
         {{comment.content}}
       </p>
-      
-       <p>Created on {{format_date comment.createdAt}} 
-
+       <p>Created on {{format_date comment.createdAt}} by {{user.name}} 
   {{/each}}
 </section>
 <script src="../js/comment.js"></script>
